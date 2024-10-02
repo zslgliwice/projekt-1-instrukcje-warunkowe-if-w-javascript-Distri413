@@ -22,7 +22,32 @@
 	
 		function sprawdz()
 		{
-			
+			const imie = document.getElementById("imie").value;
+           		const wiek = parseInt(document.getElementById("wiek").value);
+           		const wynik = document.getElementById("wynik");
+
+
+            		if(wiek < 16){
+
+                		wynik.textContent = "Nie może wziąć udział w seansie";
+
+            		}else if(wiek >= 16 && wiek <= 17){
+
+                		wynik.textContent = "Może wziąć udział, jeśli jest z opiekunem";
+
+            		}else if(wiek>=18){
+
+                		if(imie === "Brad"|| imie === "Morgan"){
+
+                    			wynik.textContent = "Może wziąć udział za darmo";
+
+                		}else{
+
+                    			wynik.textContent = "Może wziąć udział";
+                    
+                		}
+           		}
+
 			
 		}
 

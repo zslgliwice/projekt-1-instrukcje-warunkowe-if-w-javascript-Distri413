@@ -19,8 +19,40 @@
 	
 	<script>
 	
-		function ktora_cwiartka()
-		{
+		function ktora_cwiartka(){
+			const x = parseInt(document.getElementById("x").value);
+           	 	const y = parseInt(document.getElementById("y").value);
+            		const wynik = document.getElementById("wynik");
+
+            		if(x === 15 && y === 96){
+
+                		wynik.textContent = "René Descartes (1596–1650), znany w Polsce jako Kartezjusz, był francuskim filozofem, matematykiem i fizykiem, uważanym za jednego z ojców nowożytnej filozofii oraz twórcę filozofii racjonalizmu. Jego najsłynniejsze dzieło to „Rozprawa o metodzie” (1637), w którym zawarł słynne zdanie „Cogito, ergo sum” („Myślę, więc jestem”), stanowiące podstawę jego filozofii. Kartezjusz dążył do stworzenia pewnej wiedzy poprzez wątpienie we wszystko, co nie jest absolutnie pewne. W matematyce przyczynił się do rozwoju geometrii analitycznej, wprowadzając współrzędne kartezjańskie, które umożliwiły połączenie geometrii z algebrą. Jego prace miały również wpływ na rozwój nauk przyrodniczych, gdzie postulował mechanistyczną wizję świata. Żył w okresie intensywnych przemian intelektualnych i religijnych w Europie. Dużą część życia spędził w Holandii, gdzie pracował nad swoimi dziełami. Zmarł w 1650 roku w Sztokholmie, gdzie przyjechał na zaproszenie królowej Krystyny.";
+
+            		} else if(x > 0 && y < 0){
+
+		                wynik.textContent = "Punkt znajduje się w IV ćwiartce";
+
+            		} else if(x < 0 && y > 0){
+
+                		wynik.textContent = "Punkt znajduje się w II ćwiartce";
+
+            		} else if(x < 0 && y < 0){
+
+                		wynik.textContent = "Punkt znajduje się w III ćwiartce";
+
+            		} else if(x === 0 && y === 0){
+
+                		wynik.textContent = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+
+            		} else if(x === 0 || y === 0){
+
+                		wynik.textContent = "Punkt leży na jednej z osi układu";
+
+            		} else  if(x > 0 && y> 0){
+
+                		wynik.textContent = "Punkt znajduje się w I ćwiartce";
+
+			}
 			
 			
 		}

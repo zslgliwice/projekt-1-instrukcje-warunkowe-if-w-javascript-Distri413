@@ -6,13 +6,24 @@
 	<meta charset="utf-8">
 	<title>1 - Instrukcja warunkowa w JavaScript</title>
 	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	<style>
+		.green {
+			color: rgb(1, 255, 1);
+		}
+		.red {
+			color: rgb(255, 0, 0);
+		}
+		.yellow {
+			color:rgb(255, 255, 0)
+		}
+	</style>
 	
 </head>
 
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Podaj numer dnia tygodnia: <input type="number" id="dayNumber">
 	</label>
 	
 	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
@@ -21,12 +32,57 @@
 	
 	<script>
 	
-		function getDayName()
-		{
-					
-			
-		}
+		function getDayName(){
+			const dayNumber = parseInt(document.getElementById("dayNumber").value);
+			let dayName = '';
+			const wynikElement = document.getElementById("wynik");
 
+			if (dayNumber === 1) {
+
+				dayName = 'Pierwszy dzień tygodnia to Monday - poniedziałek';
+				wynikElement.className = '';
+
+			} else if (dayNumber === 2) {
+
+				dayName = 'Drugi dzień tygodnia to Tuesday - wtorek';
+				wynikElement.className = '';
+
+			} else if (dayNumber === 3) {
+
+				dayName = 'Trzeci dzień tygodnia to Wednesday - środa';
+				wynikElement.className = '';
+
+			} else if (dayNumber === 4) {
+
+				dayName = 'Czwarty dzień tygodnia to Thursday - czwartek';
+				wynikElement.className = '';
+
+			} else if (dayNumber === 5) {
+
+				dayName = 'Piąty dzień tygodnia to Friday - piątek, piąteczek, piątunio';
+				wynikElement.className = 'yellow';
+
+			} else if (dayNumber === 6) {
+
+				dayName = 'Szósty dzień tygodnia to Saturday - sobota';
+				wynikElement.className = 'green';
+
+			} else if (dayNumber === 7) {
+
+				dayName = 'Siódmy dzień tygodnia to Sunday - niedziela';
+				wynikElement.className = 'green';
+
+			} else {
+
+				dayName = 'To nie jest prawidłowy numer dnia tygodnia!';
+				wynikElement.className = 'red';
+
+			}
+
+			wynikElement.textContent = dayName;
+	
+		}
+					
 	</script>
 
 </body>

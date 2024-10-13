@@ -23,11 +23,25 @@
 	
 		function matematyka()
 		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
-			
-			
+			var a = parseFloat(document.getElementById('a').value);
+			var b = parseFloat(document.getElementById('b').value);
+			var c = parseFloat(document.getElementById('c').value);
+
+            		var najmniejsza = Math.min(a, b, c);
+            		var najwieksza = Math.max(a, b, c);
+
+           		function czyParzysta(liczba){
+                		return liczba % 2 === 0 ? 'parzysta' : 'nieparzysta';
+            		}
+
+            		var wynikHTML = "";
+
+            		wynikHTML +="<p>Najmniejsza liczba: " + najmniejsza + "</p>";
+            		wynikHTML +="<p>Największa liczba: " + najwieksza + "</p>";
+            		wynikHTML +="<p>Wartość bezwzględna a = " + Math.abs(a) + ", Wartość bezwzględna b = " + Math.abs(b) + ", Wartość bezwzględna c = " + Math.abs(c) +"</p>";
+            		wynikHTML +="<p>A jest "+ czyParzysta(a) + ", B jest "+ czyParzysta(b) + ", C jest "+ czyParzysta(c) + "</p>";
+    
+			document.getElementById('wynik').innerHTML = wynikHTML;
 		}
 
 	</script>
